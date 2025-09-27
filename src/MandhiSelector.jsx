@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./MandhiSelector.css";
+import "./mandhiSelector.css";
 
 export default function MandhiSelector({ addToCart }) {
   const [piece, setPiece] = useState("full");
