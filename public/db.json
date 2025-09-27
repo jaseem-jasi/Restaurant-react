@@ -1,0 +1,55 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "name": "Chicken Biryani",
+      "description": "Aromatic basmati rice cooked with tender chicken pieces and rich spices.",
+      "price": 180,
+      "image": "https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Grilled Fish",
+      "description": "Perfectly grilled fish fillet served with lemon butter sauce.",
+      "price": 199,
+      "image": "https://www.themealdb.com/images/media/meals/1520084413.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Margherita Pizza",
+      "description": "Classic Italian pizza with mozzarella cheese and fresh basil.",
+      "price": 195,
+      "image": "https://www.themealdb.com/images/media/meals/x0lk931587671540.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Beef Burger",
+      "description": "Juicy beef patty topped with cheese, lettuce, and tomato.",
+      "price": 249,
+      "image": "https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Pasta Alfredo",
+      "description": "Creamy pasta tossed in white sauce with mushrooms and herbs.",
+      "price": 89,
+      "image": "https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Tandoori Chicken",
+      "description": "Chicken marinated in yogurt and spices, cooked in a clay oven.",
+      "price": 320,
+      "image": "https://www.themealdb.com/images/media/meals/qptpvt1487339892.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Mandhi",
+      "description": "Traditional Yemeni rice dish with meat and aromatic spices.",
+      "price": 760,
+      "image": "https://b.zmtcdn.com/data/pictures/chains/5/21167855/a5b54e1965cc8e9a1a93064c99793df6.jpg"
+    }
+  ]
+}
+
+

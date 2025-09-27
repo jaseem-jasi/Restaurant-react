@@ -1,0 +1,105 @@
+.navbar {
+  position: fixed;
+  z-index: 5;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(204, 201, 201, 0.34); 
+  box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.359), 2px 2px 5px rgba(0, 0, 0, 0.764);
+  border-radius: 10px;
+  padding: 14px 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(0, 0, 0);
+  letter-spacing: 1.5px;
+  font-weight: 900;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px 2px;
+  margin: 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffb703;
+}
+.nav-links a.active {
+  color: #000000;
+  border-bottom: solid 2px #181818f5 ;
+}
+
+/* 
+.cart-link{
+  position:absolute;
+  right:30px;
+  top:15px;
+  background: rgba(204, 201, 201, 0.34); 
+  box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.359), 2px 2px 5px rgba(0, 0, 0, 0.764);
+  border-radius: 10px;
+  padding: 10px ;
+}
+.cart-badge {
+  background: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 6px;
+} */
+
+/* Floating cart icon */
+.floating-cart {
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  background: rgba(255, 183, 3, 0.9);
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 5px 13px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+@media (max-width: 480px) {
+  .floating-cart{
+    right: 20px;
+    bottom: 20px;
+
+  }
+}
+
+.floating-cart:hover {
+  background: rgba(255, 160, 0, 0.95);
+}
+
+.floating-cart .cart-badge {
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+

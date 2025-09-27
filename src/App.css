@@ -1,0 +1,108 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  height: 100%;  
+}
+
+
+.horizontal-scroll {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+}
+
+.h-section {
+  flex: 0 0 100vw;
+  height: 100vh;
+  overflow-y: auto; 
+  scroll-snap-align: start;
+}
+
+
+
+
+.section, .hero {
+  flex: 0 0 100vw;  
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu {
+  background: #f7f3e9;
+}
+
+.contact {
+  background: #e8f7ff;
+}
+
+.main-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ff8c00, #ff3c00);
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.main-btn:hover {
+  background: linear-gradient(135deg, #ff3c00, #ff8c00);
+  transform: scale(1.05);
+}
+
+/* Floating Cart Button */
+.cart-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  position: fixed;
+}
+
+.cart-fab:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* Cart badge */
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff6f61;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
