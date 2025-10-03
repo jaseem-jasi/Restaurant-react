@@ -191,8 +191,9 @@
 @media (max-width: 768px) {
   .story-section {
     flex-direction: column;
-    text-align: center;
+    text-align: start;
     padding: 20px;
+    margin: 50px 10px;
   }
 
   .story-text h2 {
