@@ -1,39 +1,46 @@
 .hero {
-  background: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
-  height: 100vh;
-  /* height: 100dvh; */
+  background: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") 
+    no-repeat center center/cover;
+
+  /* ✅ full screen height without scroll issues */
+  height: 100svh;   /* safe viewport height */
   width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: hidden; /* prevent any scrollbars */
 }
 
 .hero-content {
   text-align: start;
-  max-width: 1060px;       
-  padding: 0 70px;
+  max-width: 800px;    /* keeps block narrow */
+  padding: 40px;       /* ✅ equal space around text */
+  box-sizing: border-box;
 }
 
-
-h2  {
+h2 {
   margin-bottom: 10px;
-  font-size: 60px;
+  font-size: clamp(28px, 6vw, 60px);
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.853);
 }
-h3{
+
+h3 {
   color: #484545;
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 22px);
   margin-bottom: 10px;
   text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.618);
   font-family: 'Courier New', Courier, monospace;
 }
-p{
-  color: #484545;
-  font-size: 20px;
-  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.618);
 
+p {
+  color: #484545;
+  font-size: clamp(14px, 2.5vw, 20px);
+  line-height: 1.6;
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.618);
 }
 
 .btn {
@@ -44,14 +51,9 @@ p{
   margin-top: 15px;
   text-decoration: none;
   border-radius: 5px;
+  font-size: clamp(14px, 2.5vw, 18px);
 }
 
 .btn:hover {
   background: #c53030;
 }
-
-@media (max-width: 768px) { 
-  .hero-content{
-    scale: 0.85;
-  }
- }
