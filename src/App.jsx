@@ -26,11 +26,8 @@ function MainPage({ cart, addToCart }) {
       const atTop = activeSection.scrollTop <= 0;
       const atBottom = activeSection.scrollTop >= maxScroll - 2;
 
-      if (e.deltaY > 0) {
-        if (!atBottom) return;
-      } else {
-        if (!atTop) return;
-      }
+      if (e.deltaY > 0 && !atBottom) return;
+      if (e.deltaY < 0 && !atTop) return;
 
       e.preventDefault();
       container.scrollTo({
@@ -39,7 +36,7 @@ function MainPage({ cart, addToCart }) {
       });
     };
 
-    // Touch (mobile swipe)
+    // Touch events (mobile)
     const handleTouchStart = (e) => {
       touchStartRef.current = e.touches[0].clientY;
     };
@@ -68,7 +65,7 @@ function MainPage({ cart, addToCart }) {
       container.addEventListener("touchend", handleTouchEnd, { passive: false });
     }
 
-    // Observe active section
+    // IntersectionObserver to track active section
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

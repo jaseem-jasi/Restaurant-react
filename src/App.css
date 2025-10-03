@@ -8,7 +8,7 @@ html, body, #root {
 
 .horizontal-scroll {
   display: flex;
-  height: 100svh; /* safe viewport height on mobile */
+  height: 100svh; /* safe viewport height for mobile */
   width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -16,13 +16,13 @@ html, body, #root {
 
 .h-section {
   flex: 0 0 100vw;
-  height: 100svh;
+  height: 100svh; /* full screen height without extra space */
+  min-height: 100svh;
   overflow-y: auto;
   scroll-snap-align: start;
-  min-height: -webkit-fill-available;  /* for iOS Safari */
-  min-height: 100dvh; 
 }
 
+/* Ensure hero and other sections fill the viewport */
 .section, .hero {
   flex: 0 0 100vw;
   height: 100svh;
