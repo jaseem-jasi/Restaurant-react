@@ -57,3 +57,9 @@ p {
 .btn:hover {
   background: #c53030;
 }
+
+@media (max-width: 768px) { 
+  .hero{
+    position: sticky;
+  }
+ } 
