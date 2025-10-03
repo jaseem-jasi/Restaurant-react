@@ -24,6 +24,7 @@ html, body, #root {
 .section, .hero {
   flex: 0 0 100vw;
   height: 100svh;
+  min-height: 100svh;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
