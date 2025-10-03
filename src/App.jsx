@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Navbar";
@@ -9,67 +9,55 @@ import AboutUs from "./AboutUs";
 
 function MainPage({ cart, addToCart }) {
   const [active, setActive] = useState("main");
-  const touchStartRef = useRef(0);
 
   useEffect(() => {
     const container = document.querySelector(".horizontal-scroll");
     const sections = document.querySelectorAll(".h-section");
 
-    // Mouse wheel (desktop)
     const onWheel = (e) => {
       const activeSection = [...sections].find(
-        (sec) => Math.abs(sec.offsetLeft - container.scrollLeft) < 10
+        (sec) =>
+          Math.abs(sec.offsetLeft - container.scrollLeft) < 10
       );
       if (!activeSection) return;
 
       const maxScroll = activeSection.scrollHeight - activeSection.clientHeight;
+
+      
       const atTop = activeSection.scrollTop <= 0;
       const atBottom = activeSection.scrollTop >= maxScroll - 2;
 
-      if (e.deltaY > 0 && !atBottom) return;
-      if (e.deltaY < 0 && !atTop) return;
+      if (e.deltaY > 0) {
+        // scrolling down
+        if (!atBottom) {
+          return; 
+        }
+      } else {
+        // scrolling up
+        if (!atTop) {
+          return; 
+        }
+      }
 
       e.preventDefault();
       container.scrollTo({
-        left: container.scrollLeft + (e.deltaY > 0 ? window.innerWidth : -window.innerWidth),
+        left:
+          container.scrollLeft +
+          (e.deltaY > 0 ? window.innerWidth : -window.innerWidth),
         behavior: "smooth",
       });
     };
 
-    // Touch events (mobile)
-    const handleTouchStart = (e) => {
-      touchStartRef.current = e.touches[0].clientY;
-    };
-
-    const handleTouchEnd = (e) => {
-      const touchEnd = e.changedTouches[0].clientY;
-      const diff = touchStartRef.current - touchEnd;
-
-      const activeSection = [...sections].find(
-        (sec) => Math.abs(sec.offsetLeft - container.scrollLeft) < 10
-      );
-      if (!activeSection) return;
-
-      if (diff > 50) {
-        const next = activeSection.nextElementSibling;
-        if (next) container.scrollTo({ left: next.offsetLeft, behavior: "smooth" });
-      } else if (diff < -50) {
-        const prev = activeSection.previousElementSibling;
-        if (prev) container.scrollTo({ left: prev.offsetLeft, behavior: "smooth" });
-      }
-    };
-
     if (container) {
       container.addEventListener("wheel", onWheel, { passive: false });
-      container.addEventListener("touchstart", handleTouchStart, { passive: false });
-      container.addEventListener("touchend", handleTouchEnd, { passive: false });
     }
 
-    // IntersectionObserver to track active section
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
         });
       },
       { root: container, threshold: 0.5 }
@@ -78,11 +66,7 @@ function MainPage({ cart, addToCart }) {
     sections.forEach((sec) => observer.observe(sec));
 
     return () => {
-      if (container) {
-        container.removeEventListener("wheel", onWheel);
-        container.removeEventListener("touchstart", handleTouchStart);
-        container.removeEventListener("touchend", handleTouchEnd);
-      }
+      if (container) container.removeEventListener("wheel", onWheel);
       observer.disconnect();
     };
   }, []);
@@ -94,11 +78,13 @@ function MainPage({ cart, addToCart }) {
         <section id="main" className="h-section">
           <Hero />
         </section>
+
         <section id="menu" className="h-section">
           <Menu addToCart={addToCart} />
         </section>
+
         <section id="contact" className="h-section">
-          <AboutUs />
+        <AboutUs/>          
         </section>
       </div>
     </>

@@ -1,32 +1,36 @@
+
 html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  overflow-x: hidden;
+  min-height: 100%;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  height: 100%;  
 }
+
 
 .horizontal-scroll {
   display: flex;
-  height: 100svh; /* safe viewport height for mobile */
+  height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow-x: hidden; 
   scroll-behavior: smooth;
 }
 
 .h-section {
   flex: 0 0 100vw;
-  height: 100svh; /* full screen height without extra space */
-  min-height: 100svh;
-  overflow-y: auto;
+  height: 100vh;
+  overflow-y: auto; 
   scroll-snap-align: start;
 }
 
-/* Ensure hero and other sections fill the viewport */
+
+
+
 .section, .hero {
-  flex: 0 0 100vw;
-  height: 100svh;
-  min-height: 100svh;
+  flex: 0 0 100vw;  
+  height: 100vh;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -34,10 +38,14 @@ html, body, #root {
   flex-direction: column;
 }
 
-.menu { background: #f7f3e9; }
-.contact { background: #e8f7ff; }
+.menu {
+  background: #f7f3e9;
+}
 
-/* Example button styling */
+.contact {
+  background: #e8f7ff;
+}
+
 .main-btn {
   margin-top: 20px;
   background: linear-gradient(135deg, #ff8c00, #ff3c00);
@@ -74,6 +82,7 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  position: fixed;
 }
 
 .cart-fab:hover {
