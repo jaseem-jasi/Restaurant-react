@@ -25,6 +25,8 @@ html, body, #root {
   flex: 0 0 100vw;
   height: 100svh;
   min-height: 100svh;
+  min-height: -webkit-fill-available;  /* for iOS Safari */
+  min-height: 100dvh; 
   scroll-snap-align: start;
   display: flex;
   align-items: center;
