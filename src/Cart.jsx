@@ -18,7 +18,7 @@ export default function Cart({ cart, updateQty, removeFromCart, showMenuButton }
           className="menu-btn"
           onClick={() => window.location.href = "/"}
         >
-          ← Menu
+          ← Main
         </button>
       )}
 
